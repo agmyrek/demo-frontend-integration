@@ -1,2 +1,2 @@
 # demo-frontend-integration
-Dieses Projekt zeigt anhand eines Anwendungsbeispiels die Integration von Self-contained-Systems über JavaScript-Events im Frontend
+Dieses Projekt zeigt anhand eines Anwendungsbeispiels die Integration von Self-contained-Systems über JavaScript-Events im Frontend. Als fachliches Beispiel dient die Auswahl einer bestimmtem Versandoption im Rahmen des Checkouts in einem fiktiven online-shop. 
