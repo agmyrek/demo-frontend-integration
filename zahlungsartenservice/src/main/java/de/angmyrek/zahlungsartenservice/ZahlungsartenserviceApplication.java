@@ -1,13 +1,13 @@
-package de.angmyrek.versandartenservice;
+package de.angmyrek.zahlungsartenservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VersandartenserviceApplication {
+public class ZahlungsartenserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VersandartenserviceApplication.class, args);
+		SpringApplication.run(ZahlungsartenserviceApplication.class, args);
 	}
 
 }

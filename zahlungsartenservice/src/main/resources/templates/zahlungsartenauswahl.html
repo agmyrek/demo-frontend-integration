@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<script type="text/javascript">
+   window.onload = function () {
+       alert('Hi on start');
+
+       document.getElementById("click_me").addEventListener("click", function(){
+            alert('Hi on click');
+            //todo: Event mit gewählter Zahlungsart versenden
+        })
+   };
+
+
+</script>
+
+
+<body>
+    <h1>Bitte wählen Sie ihre Zahlungsart aus:</h1>
+        <p th:text="'zahlungsartenmodel: ' + ${zahlungsartenmodel} + '!'" />
+
+        <tr th:each="zahlungsart : ${zahlungsartenmodel.zahlungsarten}">
+            <td><span th:text="${zahlungsart}"> Zahlungsart </span></td>
+            </br>
+        </tr>
+    <a href="#" id="click_me">Click Me</a>
+
+
+
+
+</body>
+</html>

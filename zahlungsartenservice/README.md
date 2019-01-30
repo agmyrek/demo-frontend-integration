@@ -6,8 +6,8 @@ maven clean install
 
 * JAR im target-Verzeichnis ausführen
 
-java -jar versandartenservice-0.0.1-SNAPSHOT.jar
+java -jar target/zahlungsartenservice-0.0.1-SNAPSHOT.jar
 
 ## Ressourcen
 
-* localhost:8080/versandarten
+* localhost:8080/zahlungsarten
