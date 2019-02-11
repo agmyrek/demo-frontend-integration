@@ -9,10 +9,10 @@ import java.util.List;
 @Data
 public class ZahlungsartenUiModel {
 
-    private List<Zahlungsart> zahlungsarten = new ArrayList<>();
+    private List<String> zahlungsarten = new ArrayList<>();
 
 
-    public void addZahlungsart(Zahlungsart zahlungsart){
+    public void addZahlungsart(String zahlungsart){
         this.zahlungsarten.add(zahlungsart);
     }
 }

@@ -13,13 +13,12 @@ public class ZahlungsartenController {
     public ModelAndView getZahlungsarten(){
 
         ZahlungsartenUiModel model = new ZahlungsartenUiModel();
-        model.addZahlungsart(Zahlungsart.VORKASSE);
-        model.addZahlungsart(Zahlungsart.RECHNUNG);
-        model.addZahlungsart(Zahlungsart.BANKEINZUG);
+        model.addZahlungsart(Zahlungsart.VORKASSE.name());
+        model.addZahlungsart(Zahlungsart.RECHNUNG.name());
+        model.addZahlungsart(Zahlungsart.BANKEINZUG.name());
 
         ModelAndView mav = new ModelAndView("zahlungsartenauswahl");
         mav.addObject("zahlungsartenmodel", model);
-        mav.addObject("test1", "test1 - wert");
         return mav;
     }
 }

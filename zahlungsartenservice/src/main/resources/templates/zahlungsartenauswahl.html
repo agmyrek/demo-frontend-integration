@@ -6,31 +6,34 @@
 </head>
 
 <script type="text/javascript">
-   window.onload = function () {
-       alert('Hi on start');
 
-       document.getElementById("click_me").addEventListener("click", function(){
-            alert('Hi on click');
-            //todo: Event mit gewählter Zahlungsart versenden
-        })
-   };
-
+   function test(){
+        //todo: Event mit gewählter Zahlungsart versenden
+        alert('Hi on click');
+   }
 
 </script>
 
-
 <body>
-    <h1>Bitte wählen Sie ihre Zahlungsart aus:</h1>
-        <p th:text="'zahlungsartenmodel: ' + ${zahlungsartenmodel} + '!'" />
+    <h1>Bitte wählen Sie ihre Zahlungsart aus</h1>
 
-        <tr th:each="zahlungsart : ${zahlungsartenmodel.zahlungsarten}">
-            <td><span th:text="${zahlungsart}"> Zahlungsart </span></td>
-            </br>
-        </tr>
-    <a href="#" id="click_me">Click Me</a>
+        <th:block th:each="zahlungsart : ${zahlungsartenmodel.zahlungsarten}">
 
-
-
+            <th:block th:switch="${zahlungsart}">
+                <div th:case="'VORKASSE'" id="vorkasse-panel">
+                    <h2>Vorkasse</h2>
+                    <a href="#" id="zahlungsart-vorkasse-auswaehlen" onclick="test()">Auswählen</a>
+                </div>
+                <div th:case="'RECHNUNG'">
+                    <h2>Rechnung</h2>
+                    <a href="#" id="zahlungsart-rechnung-auswaehlen" onclick="test()">Auswählen</a>
+                </div>
+                <div th:case="'BANKEINZUG'">
+                    <h2>Bankeinzug</h2>
+                    <a href="#" id="zahlungsart-bankeinzug-auswaehlen" onclick="test()">Auswählen</a>
+                </div>
+            </th:block>
+        </th:block>
 
 </body>
 </html>
