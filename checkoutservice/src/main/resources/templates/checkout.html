@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Checkout</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<script type="text/javascript">
+
+    // Listen for the event.
+    window.addEventListener('zahlungsart-ausgewaehlt', function (event) {
+        console.log("Event: zahlungsart-ausgewaehlt event im Checkoutservice erhalten:");
+    }, false);
+
+</script>
+
+<body>
+
+    <!-- ausgewähltes Produkt -->
+    <div>
+
+    </div>
+
+    <!-- Auswahl der Zahlungsart -->
+    <div>
+        <h1>Zahlungsart</h1>
+        <!-- Wird durch client side include ersetzt -->
+        <div id="zahlungsarten-checkout-content"></div>
+    </div>
+
+    <!-- Kauf/Abschluss -->
+    <div>
+
+    </div>
+
+
+
+</body>
+</html>

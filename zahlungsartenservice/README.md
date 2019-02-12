@@ -8,6 +8,6 @@ maven clean install
 
 java -jar target/zahlungsartenservice-0.0.1-SNAPSHOT.jar
 
-## Ressourcen
+# Ressourcen
 
 * localhost:8080/zahlungsarten
