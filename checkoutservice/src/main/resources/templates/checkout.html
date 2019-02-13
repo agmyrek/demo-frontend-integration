@@ -7,10 +7,23 @@
 
 <script type="text/javascript">
 
-    // Listen for the event.
-    window.addEventListener('zahlungsart-ausgewaehlt', function (event) {
-        console.log("Event: zahlungsart-ausgewaehlt event im Checkoutservice erhalten:");
-    }, false);
+    window.onload = function () {
+        console.log("Checkout onload");
+
+        fetch('http://example.com/movies.json')
+            .then(function(response) {
+                return response.json();
+            });
+
+        // Listen for the event.
+        window.addEventListener('zahlungsart-ausgewaehlt', function (event) {
+            console.log("Event: zahlungsart-ausgewaehlt event im Checkoutservice erhalten:");
+        }, false);
+
+
+    };
+
+
 
 </script>
 
