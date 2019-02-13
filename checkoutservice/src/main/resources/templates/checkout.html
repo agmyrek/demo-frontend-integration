@@ -10,9 +10,16 @@
     window.onload = function () {
         console.log("Checkout onload");
 
-        fetch('http://example.com/movies.json')
+        fetch('http://localhost:8081/zahlungsarten')
             .then(function(response) {
-                return response.json();
+                return response.text();
+            })
+            .then(function(data) {
+                //html transklusion:
+                var element = document.getElementById('zahlungsarten-checkout-content');
+                if(element){
+                    element.innerHTML = data;
+                }
             });
 
         // Listen for the event.
@@ -31,7 +38,8 @@
 
     <!-- ausgewähltes Produkt -->
     <div>
-
+        <h1>Produkt auswählen</h1>
+        <div>...</div>
     </div>
 
     <!-- Auswahl der Zahlungsart -->
@@ -43,7 +51,8 @@
 
     <!-- Kauf/Abschluss -->
     <div>
-
+        <h1>Abschluss</h1>
+        <button type="button">Kaufen</button>
     </div>
 
 

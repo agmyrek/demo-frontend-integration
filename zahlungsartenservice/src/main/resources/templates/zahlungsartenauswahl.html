@@ -1,44 +1,38 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Zahlungsarten</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
 
-<script type="text/javascript">
 
-   function test(zahlungsart){
+    <script type="text/javascript">
 
-       console.log('gewählte Zahlungsart: '+zahlungsart);
+       function zahlungsartAuswaehlen(zahlungsart){
 
-       var event = new Event('zahlungsart-ausgewaehlt');
+           console.log('gewählte Zahlungsart: '+zahlungsart);
 
-       // event auf dem window object veröffentlichen
-       window.dispatchEvent(event);
-   }
+           var event = new Event('zahlungsart-ausgewaehlt');
 
-</script>
+           // event auf dem window object veröffentlichen
+           window.dispatchEvent(event);
+       }
 
-<body>
+    </script>
     <h1>Bitte wählen Sie ihre Zahlungsart aus</h1>
 
-        <th:block th:each="zahlungsart : ${zahlungsartenmodel.zahlungsarten}">
+    <th:block th:each="zahlungsart : ${zahlungsartenmodel.zahlungsarten}">
 
-            <th:block th:switch="${zahlungsart}">
-                <div th:case="'VORKASSE'" id="vorkasse-panel">
-                    <h2>Vorkasse</h2>
-                    <a href="#" th:zahlungsart="${zahlungsart}" onclick="test(this.getAttribute('zahlungsart'))">Auswählen</a>
-                </div>
-                <div th:case="'RECHNUNG'">
-                    <h2>Rechnung</h2>
-                    <a href="#" th:zahlungsart="${zahlungsart}" onclick="test(this.getAttribute('zahlungsart'))">Auswählen</a>
-                </div>
-                <div th:case="'BANKEINZUG'">
-                    <h2>Bankeinzug</h2>
-                    <a href="#" th:zahlungsart="${zahlungsart}" onclick="test(this.getAttribute('zahlungsart'))">Auswählen</a>
-                </div>
-            </th:block>
+        <th:block th:switch="${zahlungsart}">
+            <div th:case="'VORKASSE'" id="vorkasse-panel">
+                <h2>Vorkasse</h2>
+                <a href="#" th:zahlungsart="${zahlungsart}" onclick="zahlungsartAuswaehlen(this.getAttribute('zahlungsart'))">Auswählen</a>
+            </div>
+            <div th:case="'RECHNUNG'">
+                <h2>Rechnung</h2>
+                <a href="#" th:zahlungsart="${zahlungsart}" onclick="zahlungsartAuswaehlen(this.getAttribute('zahlungsart'))">Auswählen</a>
+            </div>
+            <div th:case="'BANKEINZUG'">
+                <h2>Bankeinzug</h2>
+                <a href="#" th:zahlungsart="${zahlungsart}" onclick="zahlungsartAuswaehlen(this.getAttribute('zahlungsart'))">Auswählen</a>
+            </div>
         </th:block>
+    </th:block>
 
-</body>
 </html>

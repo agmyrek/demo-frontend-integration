@@ -10,4 +10,4 @@ java -jar target/zahlungsartenservice-0.0.1-SNAPSHOT.jar
 
 # Ressourcen
 
-* localhost:8080/zahlungsarten
+* localhost:8081/zahlungsarten
