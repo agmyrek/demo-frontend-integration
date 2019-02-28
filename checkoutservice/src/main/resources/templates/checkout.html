@@ -3,42 +3,12 @@
 <head>
     <title>Checkout</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/checkout.js"></script>
 </head>
 
-<script type="text/javascript">
 
-    window.onload = function () {
-        console.log("Checkout onload");
-
-        fetch('http://localhost:8081/zahlungsarten')
-            .then(function(response) {
-                return response.text();
-            })
-            .then(function(data) {
-                //html transklusion:
-                var element = document.getElementById('zahlungsarten-checkout-content');
-                if(element){
-                    element.innerHTML = data;
-                }
-                //Nachgeladenes JavaScript explicit ausführen
-                var arr = element.getElementsByTagName('script')
-                for (var n = 0; n < arr.length; n++)
-                    eval(arr[n].innerHTML)
-
-
-            });
-
-        // Listen for the event.
-        window.addEventListener('zahlungsart-ausgewaehlt', function (event) {
-            console.log("Event: zahlungsart-ausgewaehlt event im Checkoutservice erhalten:");
-        }, false);
-
-
-    };
-
-
-
-</script>
 
 <body>
 

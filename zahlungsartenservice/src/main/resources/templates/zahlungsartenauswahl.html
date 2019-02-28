@@ -1,47 +1,26 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
+    <script type="text/javascript" src="http://localhost:8081/js/zahlungsarten.js"></script>
 
     <h1>Bitte wählen Sie ihre Zahlungsart aus</h1>
 
     <th:block th:each="zahlungsart : ${zahlungsartenmodel.zahlungsarten}">
 
         <th:block th:switch="${zahlungsart}">
-            <div th:case="'VORKASSE'" id="vorkasse-panel">
+            <div th:case="'VORKASSE'">
                 <h2>Vorkasse</h2>
-                <a href="#" id="link-auswahl-vorkasse" th:zahlungsart="${zahlungsart}" onclick="zahlungsartAuswaehlen(this.getAttribute('zahlungsart'))">Auswählen</a>
+                <a href="#" id="link-auswahl-vorkasse" th:zahlungsart="${zahlungsart}">Auswählen</a>
             </div>
             <div th:case="'RECHNUNG'">
                 <h2>Rechnung</h2>
-                <a href="#" th:zahlungsart="${zahlungsart}" onclick="zahlungsartAuswaehlen(this.getAttribute('zahlungsart'))">Auswählen</a>
+                <a href="#" id="link-auswahl-rechnung" th:zahlungsart="${zahlungsart}">Auswählen</a>
             </div>
             <div th:case="'BANKEINZUG'">
                 <h2>Bankeinzug</h2>
-                <a href="#" th:zahlungsart="${zahlungsart}" onclick="zahlungsartAuswaehlen(this.getAttribute('zahlungsart'))">Auswählen</a>
+                <a href="#" id="link-auswahl-bankeinzug" th:zahlungsart="${zahlungsart}">Auswählen</a>
             </div>
         </th:block>
     </th:block>
-
-    <script type="text/javascript">
-
-        console.log('ZAS script loaded');
-
-        document.getElementById("link-auswahl-vorkasse").addEventListener("click", test);
-
-        function test(){
-            console.log('test...');
-        }
-
-       function zahlungsartAuswaehlen(zahlungsart){
-
-           console.log('gewählte Zahlungsart: '+zahlungsart);
-
-           var event = new Event('zahlungsart-ausgewaehlt');
-
-           // event auf dem window object veröffentlichen
-           window.dispatchEvent(event);
-       }
-
-    </script>
 
 </html>
