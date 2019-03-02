@@ -1,11 +1,22 @@
 
-var checkoutData = {
-        artikelId : '',
-        zahlungsart : ''
-};
+class CheckoutData{
+
+    setZahlungsart(zahlungsart){
+        this.zahlungsart = zahlungsart;
+    }
+
+    toJSON() {
+        return {
+          zahlungsart: this.zahlungsart
+        };
+      }
+}
+
+let checkoutData;
 
 window.onload = function () {
 
+    checkoutData = new CheckoutData()
     includeZahlungsartenauswahl();
     addZahlungsartAusgewaehltEventHandler();
     addKaufenEventHandler();
@@ -18,8 +29,9 @@ function includeZahlungsartenauswahl(){
 function addZahlungsartAusgewaehltEventHandler(){
 
     window.addEventListener('zahlungsart-ausgewaehlt', function (event) {
-        console.log("Event: zahlungsart-ausgewaehlt event im Checkoutservice erhalten: "+event.detail);
-        checkoutData.zahlungsart = event.detail;
+
+        checkoutData.setZahlungsart(event.detail.zahlungsart);
+        console.log("Event: zahlungsart-ausgewaehlt event im Checkoutservice erhalten: "+checkoutData.toJSON());
 
     }, false);
 }

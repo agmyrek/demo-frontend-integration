@@ -1,6 +1,5 @@
 package de.angmyrek.zahlungsartenservice.ui;
 
-import de.angmyrek.zahlungsartenservice.business.Zahlungsart;
 import lombok.Data;
 
 import java.util.ArrayList;

@@ -3,21 +3,23 @@
 
     <script type="text/javascript" src="http://localhost:8081/js/zahlungsarten.js"></script>
 
-    <h1>Bitte wählen Sie ihre Zahlungsart aus</h1>
+    <h2>Zahlungsart</h2>
+
+    <p>Bitte wählen Sie ihre Zahlungsart aus</p>
 
     <th:block th:each="zahlungsart : ${zahlungsartenmodel.zahlungsarten}">
 
         <th:block th:switch="${zahlungsart}">
-            <div th:case="'VORKASSE'">
-                <h2>Vorkasse</h2>
+            <div th:case="'VORKASSE'" class="container" style="margin-bottom: 10px;">
+                <h4>Vorkasse</h4>
                 <a href="#" id="link-auswahl-vorkasse" th:zahlungsart="${zahlungsart}">Auswählen</a>
             </div>
-            <div th:case="'RECHNUNG'">
-                <h2>Rechnung</h2>
+            <div th:case="'RECHNUNG'" class="container" style="margin-bottom: 10px;">
+                <h4>Rechnung</h4>
                 <a href="#" id="link-auswahl-rechnung" th:zahlungsart="${zahlungsart}">Auswählen</a>
             </div>
-            <div th:case="'BANKEINZUG'">
-                <h2>Bankeinzug</h2>
+            <div th:case="'BANKEINZUG'" class="container" style="margin-bottom: 10px;">
+                <h4>Bankeinzug</h4>
                 <a href="#" id="link-auswahl-bankeinzug" th:zahlungsart="${zahlungsart}">Auswählen</a>
             </div>
         </th:block>

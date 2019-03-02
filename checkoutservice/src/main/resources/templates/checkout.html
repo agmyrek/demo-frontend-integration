@@ -3,31 +3,37 @@
 <head>
     <title>Checkout</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="js/checkout.js"></script>
 </head>
 
 <body>
+    <div class="container">
 
-    <!-- ausgewähltes Produkt -->
-    <div>
-        <h1>Produkt auswählen</h1>
-        <div>...</div>
+        <div class="header" style="padding: 20px;">Demo - SCS-Frontend-integration über JavaScript-Events</div>
+
+        <div class="container">
+            <!-- ausgewähltes Produkt -->
+            <div class="container">
+                <h2>Bücher-Abbonement</h2>
+                <p>Preis: 9.99 € </p>
+            </div>
+
+            <!-- Auswahl der Zahlungsart -->
+            <!-- Hier wird der client side include gesetzt -->
+            <div id="zahlungsarten-checkout-content" class="container" style="margin-bottom: 2rem"></div>
+
+            <!-- Kauf/Abschluss -->
+            <div class="container">
+                <button type="button" id="kaufen-button" class="btn btn-primary btn-lg btn-block">Kaufen</button>
+                <p></p>
+            </div>
+        </div>
+
     </div>
-
-    <!-- Auswahl der Zahlungsart -->
-    <div>
-        <h1>Zahlungsart</h1>
-        <!-- Wird durch client side include ersetzt -->
-        <div id="zahlungsarten-checkout-content"></div>
-    </div>
-
-    <!-- Kauf/Abschluss -->
-    <div>
-        <h1>Abschluss</h1>
-        <button type="button" id="kaufen-button">Kaufen</button>
-    </div>
-
 </body>
 </html>
