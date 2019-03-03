@@ -28,10 +28,16 @@
             <div id="zahlungsarten-checkout-content" class="container" style="margin-bottom: 2rem"></div>
 
             <!-- Kauf/Abschluss -->
-            <div class="container">
+            <div class="container" style="margin-bottom: 2rem">
                 <button type="button" id="kaufen-button" class="btn btn-primary btn-lg btn-block">Kaufen</button>
-                <p></p>
             </div>
+            <!-- Bestätigung-->
+            <div id="kaufabschluss-bestätigung" class="container" style="visibility: hidden;">
+                <h2>Ihr Kauf war erfolgreich!</h2>
+                <span>Gewählte Zahlungsart: </span>
+                <span id="kaufabschluss-zahlungsart"></span>
+            </div>
+
         </div>
 
     </div>
