@@ -1,16 +1,4 @@
 
-class ZahlungsartEventData{
-
-    constructor(zahlungsart){
-        this.zahlungsart = zahlungsart;
-    }
-
-    toJSON() {
-        return {
-          zahlungsart: this.zahlungsart
-        };
-      }
-}
 document.getElementById("link-auswahl-vorkasse").addEventListener("click", function(event){
     zahlungsartAuswaehlen(event);
 });
@@ -23,6 +11,18 @@ document.getElementById("link-auswahl-bankeinzug").addEventListener("click", fun
     zahlungsartAuswaehlen(event);
 });
 
+class ZahlungsartEventData{
+
+    constructor(zahlungsart){
+        this.zahlungsart = zahlungsart;
+    }
+
+    toJSON() {
+        return {
+            zahlungsart: this.zahlungsart
+        };
+    }
+}
 
 function zahlungsartAuswaehlen(event){
 

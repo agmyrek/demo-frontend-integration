@@ -23,8 +23,14 @@ window.onload = function () {
 };
 
 function includeZahlungsartenauswahl(){
-    //Aufruf der Ressource zahlungsarten. Die Antwort wird in das HTML eingesetzt.
-    $( "#zahlungsarten-checkout-content" ).load( "http://localhost:8081/zahlungsarten" );
+
+    fetch('http://localhost:8081/zahlungsarten')
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(html){
+            $("#zahlungsarten-checkout-content" ).html(html);
+        });
 }
 
 function addZahlungsartAusgewaehltEventHandler(){
